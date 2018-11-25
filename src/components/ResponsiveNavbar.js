@@ -22,12 +22,13 @@ class DesktopNavbar extends Component {
         >
           <Menu fixed='top' inverted borderless size='large' >
             <Container>
-              <Menu.Item header>K-ZONE</Menu.Item>
+              <Menu.Item header as={Link}
+                  to='/'>K-ZONE</Menu.Item>
               <Menu.Menu position='right'>
                 <Menu.Item
                   name='home'
                   active={activeItem === 'home'}
-                  onClick={this.handleItemClick}
+                  //onClick={this.handleItemClick}
                   color='green'
                   as={Link}
                   to='/home'
@@ -38,14 +39,14 @@ class DesktopNavbar extends Component {
                 <Menu.Item 
                   name='browse' 
                   active={activeItem === 'browse'} 
-                  onClick={this.handleItemClick}
+                  //onClick={this.handleItemClick}
                   color='green'
                 >
                   <Dropdown text='Browse'>
                     <Dropdown.Menu>
-                      <Dropdown.Item text='Groups' />
-                      <Dropdown.Item text='Artists' />
-                      <Dropdown.Item text='Albums' />
+                      <Dropdown.Item text='Groups' as={Link} to='/groups' />
+                      <Dropdown.Item text='Artists' as={Link} to='/artists' />
+                      <Dropdown.Item text='Albums' as={Link} to='/albums' />
                     </Dropdown.Menu>
                   </Dropdown>
                 </Menu.Item>
