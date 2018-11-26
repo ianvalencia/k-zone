@@ -14,51 +14,32 @@ class DesktopNavbar extends Component {
   render() {
     const { activeItem } = this.state
 
-    return (
-      <Responsive minWidth={Responsive.onlyMobile.maxWidth}>
-        <Segment
-          textAlign='center'
-          style={{ minHeight: 700, padding: '1em 0em', borderRadius: 0 }}
-        >
-          <Menu fixed='top' inverted borderless size='large' >
-            <Container>
-              <Menu.Item header as={Link}
-                  to='/'>K-ZONE</Menu.Item>
-              <Menu.Menu position='right'>
-                <Menu.Item
-                  name='home'
-                  active={activeItem === 'home'}
-                  //onClick={this.handleItemClick}
-                  color='green'
-                  as={Link}
-                  to='/home'
-                >
-                  Home
-                </Menu.Item>
-
-                <Menu.Item 
-                  name='browse' 
-                  active={activeItem === 'browse'} 
-                  //onClick={this.handleItemClick}
-                  color='green'
-                >
-                  <Dropdown text='Browse'>
-                    <Dropdown.Menu>
-                      <Dropdown.Item text='Groups' as={Link} to='/groups' />
-                      <Dropdown.Item text='Artists' as={Link} to='/artists' />
-                      <Dropdown.Item text='Albums' as={Link} to='/albums' />
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </Menu.Item>
-
-              </Menu.Menu>
-             
-            </Container>
-            
-          </Menu>
-        </Segment>
-        
-      </Responsive>
+    return ( 
+      <Menu fixed='top' inverted borderless size='large' >
+        <Container>
+          <Menu.Item header as={Link}
+              to='/'>K-ZONE</Menu.Item>
+          <Menu.Menu position='right'>
+            <Menu.Item
+              name='home'
+              active={activeItem === 'home'}
+              //onClick={this.handleItemClick}
+              color='green'
+              as={Link}
+              to='/'
+            >
+              Home
+            </Menu.Item>
+            <Dropdown item text='Browse'>
+              <Dropdown.Menu>
+                <Dropdown.Item text='Groups' as={Link} to='/groups' />
+                <Dropdown.Item text='Artists' as={Link} to='/artists' />
+                <Dropdown.Item text='Albums' as={Link} to='/albums' />
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Menu>   
+        </Container>
+      </Menu>
     )
   }
 }
@@ -76,7 +57,6 @@ class MobileNavbar extends Component {
 const ResponsiveNavbar = ({ }) => (
   <div>
     <DesktopNavbar />
-    <MobileNavbar />
   </div>
 
 );
