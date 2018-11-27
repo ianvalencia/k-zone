@@ -3,27 +3,18 @@ import { Responsive, Segment, Menu, Container, Dropdown } from 'semantic-ui-reac
 import { Link } from 'react-router-dom'
 
 class DesktopNavbar extends Component {
-  state = {
-    //activeItem: 'home'
-  }
-
-  handleItemClick = (e, { name }) => {
-    //this.setState({ activeItem: name })
-  }
 
   render() {
-    const { activeItem } = this.state
+
 
     return ( 
-      <Menu fixed='top' inverted borderless size='large' >
+      <Menu inverted borderless size='large' >
         <Container>
           <Menu.Item header as={Link}
               to='/'>K-ZONE</Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item
               name='home'
-              active={activeItem === 'home'}
-              //onClick={this.handleItemClick}
               color='green'
               as={Link}
               to='/'
