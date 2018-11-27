@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HomepageLayout from './HomepageLayout'
 import ResponsiveNavbar from './ResponsiveNavbar'
 import { Route, Redirect } from 'react-router-dom';
 import LandingPage from './LandingPage';
@@ -12,7 +11,12 @@ class App extends Component {
       <div>
         <ResponsiveNavbar />
         <Route exact path='/' component={LandingPage}/>
-        <Route path='/groups' component={GroupsContainer}/>
+        <Route exact path='/groups' render={() => (
+        <Redirect
+          to='/groups/browse'
+        />
+      )} />
+        <Route path='/groups/browse' component={GroupsContainer}/>
         <Route path='/artists' component={ArtistsContainer}/>
         <Route path='/albums' component={AlbumsContainer}/>
       </div>
