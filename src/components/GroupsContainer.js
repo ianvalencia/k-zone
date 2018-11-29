@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Responsive, Segment, Menu, Container, Dropdown, List, Divider, Grid, Label } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 //import Group from './Group'
 import BrowseGroup from './BrowseGroups';
+import Group from './Group'
 const groupTypeOptions = [
   { key: 1, text: 'Boy Group', value:'Boy Group' },
   { key: 2, text: 'Girl Group', value:'Girl Group' },
@@ -83,9 +84,34 @@ class GroupsContainer extends Component {
   
 
   render() {
+    
     return(
       <Container style={{ marginTop: '2em'}}>
-        <BrowseGroup data={this.state} />
+        <Route path='/browse/groups' render={() => <BrowseGroup data={this.state}/>} />
+        <Route
+          path='/groups/:groupName'
+          render={({ match }) => {
+            const grp = this.state.groups.find(
+              (g) => g.groupName === match.params.groupName
+            );
+            console.log(grp)
+            return (
+              <Segment fluid/>
+            );
+          }}
+        />
+        {/* <Group data={{
+        groupName: 'LOONA',
+        groupType: 'Girl Group', // Boy Group, Girl Group, Co-ed 
+        debutDate: '',
+        company: '',
+        fandomName: '',
+        fandomColor: '',
+        status: '', // Active, Disbanded
+        members: [], // ID ng members dito
+        imgURL: 'https://lastfm-img2.akamaized.net/i/u/ar0/7e9fbb03749066e1d58b6e9261fdbbbc.jpg', // links lang ilalagay
+        description: 'BBC\'s bbs'
+      }} /> */}
       </Container>
     
     )

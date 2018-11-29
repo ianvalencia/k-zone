@@ -5,21 +5,6 @@ import { Link } from 'react-router-dom'
 class GroupCard extends React.Component {
   render() {
     return (
-      // <Card
-      //   image={this.props.group.imgURL}
-      //   header={this.props.group.groupName}
-      //   meta={this.props.group.groupType}
-      //   description={this.props.group.description}
-      //   extra={
-      //     <div>
-      //       <Link to='/groups/${this.props.group.groupName}'>
-      //         See more
-      //         <Icon name='chevron right' />
-      //       </Link>
-            
-      //     </div>
-      //   }
-      // />
       <Card>
         
         <Container >
@@ -34,7 +19,7 @@ class GroupCard extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <div>
-            <Link to='/groups/${this.props.group.groupName}'>
+            <Link to={`/groups/${this.props.group.groupName}`}>
               See more
               <Icon name='chevron right' />
             </Link>
