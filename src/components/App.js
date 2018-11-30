@@ -13,11 +13,11 @@ class App extends Component {
       {
         groupName: 'NCT 127',
         groupType: 'Boy Group', // Boy Group, Girl Group, Co-ed 
-        debutDate: '',
-        company: '',
-        fandomName: '',
-        fandomColor: '',
-        status: '', // Active, Disbanded
+        debutDate: 'July 27, 2016',
+        company: 'SM Entertainment',
+        fandomName: 'NCTZen',
+        fandomColor: 'Something Green',
+        status: 'Active', // Active, Disbanded
         members: [], // ID ng members dito
         imgURL: 'https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/63/cc/b4/63ccb404-eb7a-a3f0-4dc9-152540bc161f/NCT_127_Cover.jpg/268x0w.jpg', // links lang ilalagay
         description: 'Issa good boy group from SM'
@@ -104,14 +104,6 @@ class App extends Component {
           }}
         />
         </Container>
-        
-        {/* <Route exact path='/groups' render={() => (
-          <Redirect
-            to='/groups/browse'
-          />
-        )} /> */}
-
-        
       </div>
     );
   }
