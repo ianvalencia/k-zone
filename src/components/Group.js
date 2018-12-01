@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 class Group extends React.Component {
   state = {
     editFormOpen: false,
+    id: this.props.data.id,
     groupName: this.props.data.groupName,
     groupType: this.props.data.groupType,
     debutDate: this.props.data.debutDate,
@@ -28,6 +29,7 @@ class Group extends React.Component {
   
   handleSubmit = () => {
     this.props.onFormSubmit({
+      id: this.state.id,
       groupName: this.state.groupName,
       groupType: this.state.groupType,
       debutDate: this.state.debutDate,
@@ -77,7 +79,33 @@ class Group extends React.Component {
                 />
                 
               </Form.Group>
-              <Form.Button content='Save' onClick={this.handleSubmit} />
+              <Form.Group equal>
+                <Form.Input 
+                  placeholder='Company' 
+                  name='company' 
+                  value={this.state.company}
+                  label='Company'
+                  onChange={this.handleChange} 
+                />
+                
+                <Form.Input
+                  placeholder='Fandom Name'
+                  name='fandomName'
+                  value={this.state.fandomName}
+                  label='Fandom Name'
+                  onChange={this.handleChange} 
+                />
+
+                <Form.Input
+                  placeholder='Fandom Color'
+                  name='fandomColor'
+                  value={this.state.fandomColor}
+                  label='Fandom Color'
+                  onChange={this.handleChange} 
+                />
+                
+              </Form.Group>
+              <Form.Button content='Save' onClick={this.handleSubmit} type='button' />
               <Form.Button content='Cancel' onClick={this.handleFormClose} />
             </Form>
           </Segment>
@@ -118,7 +146,7 @@ class Group extends React.Component {
                           <Header as='h5'>Debut Date</Header>
                         </Grid.Column>
                         <Grid.Column >
-                          <p>{this.state.debutDate}</p>
+                          <p>{this.props.data.debutDate}</p>
                         </Grid.Column>	
                       </Grid.Row>
                       <Grid.Row>

@@ -28,7 +28,7 @@ class GroupCard extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <div>
-            <Link to={`/groups/${this.props.group.groupName}`}>
+            <Link to={`/groups/${this.props.group.id}`}>
               See more
               <Icon name='chevron right' />
             </Link>
