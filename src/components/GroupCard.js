@@ -3,6 +3,15 @@ import { Card, Icon, Image, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 class GroupCard extends React.Component {
+  shortenDescription = (desc) => {
+    if (desc.length>60) {
+      return desc.slice(0,60)+'...'
+    } else {
+      return desc
+    }
+  }
+
+
   render() {
     return (
       <Card>
@@ -15,7 +24,7 @@ class GroupCard extends React.Component {
           <Card.Meta>
             <span className='date'>{this.props.group.groupType}</span>
           </Card.Meta>
-          <Card.Description>{this.props.group.description}</Card.Description>
+          <Card.Description>{this.shortenDescription(this.props.group.description)}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <div>

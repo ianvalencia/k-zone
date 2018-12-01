@@ -20,7 +20,7 @@ class App extends Component {
         status: 'Active', // Active, Disbanded
         members: [], // ID ng members dito
         imgURL: 'https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/63/cc/b4/63ccb404-eb7a-a3f0-4dc9-152540bc161f/NCT_127_Cover.jpg/268x0w.jpg', // links lang ilalagay
-        description: 'Issa good boy group from SM'
+        description: 'NCT 127 (엔씨티 127) is the 2nd sub-unit of the boy group NCT. The sub-unit currently consists of 10 members: Taeil, Johnny, Taeyong, Doyoung, Yuta, Jaehyun, Win Win, Jungwoo, Mark, Haechan. NCT 127 debuted on July 7th, 2016 under SM Entertainment.'
       },
       {
         groupName: 'Stray Kids',
@@ -32,7 +32,7 @@ class App extends Component {
         status: '', // Active, Disbanded
         members: [], // ID ng members dito
         imgURL: 'https://lastfm-img2.akamaized.net/i/u/770x0/dd9393d96f6b5b33cdd6e90f35b680fd.jpg', // links lang ilalagay
-        description: 'Issa good boy group from JYP'
+        description: 'Stray Kids (스트레이 키즈) is a 9-member South Korean boy group under JYP Entertainment. The group consists of Bang Chan, Woojin, Lee Know, Changbin, Hyunjin, Han, Felix, Seungmin, and I.N. Stray Kids was created through the survival program with the same name, Stray Kids. Stray Kids debuted on March 25, 2018.'
       },
       {
         groupName: 'LOONA',
@@ -44,7 +44,7 @@ class App extends Component {
         status: '', // Active, Disbanded
         members: [], // ID ng members dito
         imgURL: 'https://lastfm-img2.akamaized.net/i/u/ar0/7e9fbb03749066e1d58b6e9261fdbbbc.jpg', // links lang ilalagay
-        description: 'BBC\'s bbs'
+        description: 'LOONA (LOOΠΔ – 이달의 소녀) contains of 12 members: Haseul, Vivi, Yves, JinSoul, Kim Lip, Chuu, Heejin, Hyunjin, Go Won, Choerry, Olivia Hye and Yeojin. The band is under Blockberry Creative. They debuted on August 20, 2018 with their title track “Hi High”.'
       },
       {
         groupName: 'Seventeen',
@@ -78,6 +78,33 @@ class App extends Component {
     ]
   }
 
+  createGroup = (grp) => {
+    this.setState({
+      timers: this.state.groups.concat(grp),
+    });
+  } 
+
+  updateGroup = (attrs) => {
+    this.setState({
+      timers: this.state.groups.map((group) => {
+        if (group.groupName === attrs.groupName) {
+          return Object.assign({}, group, {
+            groupType: attrs.groupType,
+            debutDate: attrs.debutDate,
+            company: attrs.company,
+            fandomName: attrs.fandomName,
+            fandomColor: attrs.fandomColor,
+            status: attrs.status,
+            description: attrs.description,
+            imgURL: attrs.imgURL,
+          });
+        } else {
+          return group;
+        }
+      }),
+    });
+  }
+
   render() {
     return (
       <div>
@@ -92,14 +119,13 @@ class App extends Component {
           render={({ match }) => {
             const grp = this.state.groups.find(
               (g) => g.groupName === match.params.groupName
-            );
+            )
 
-            console.log(grp)
-            if (grp === undefined) {
-
-            }
             return (
-              <Group data={grp} />
+              <Group 
+                data={grp} 
+                onFormSubmit={this.updateGroup} 
+              />
             );
           }}
         />
