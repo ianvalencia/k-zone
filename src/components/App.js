@@ -83,17 +83,10 @@ class App extends Component {
           <Route
             path='/groups/:id'
             render={({ match }) => {
-              this.fetchData()
-              const grp = this.state.groups.find(
-                (g) => g.id == match.params.id
-              )
-              if (grp === undefined) {
-                return (<Redirect to='/browse/groups' /> )
-              }
-
+              console.log(match.params.id)
               return (
                 <Group 
-                  data={grp} 
+                  grpId={match.params.id}
                   onFormSubmit={this.updateGroup}
                   onDeleteClick={this.deleteGroup} 
                 />
