@@ -5,7 +5,6 @@ import {
   Header, 
   Image, 
   Divider, 
-  Card, 
   Container, 
   Grid, Icon, 
   Form, 

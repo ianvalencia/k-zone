@@ -1,13 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { 
-  Grid, 
-  Menu, 
-  Segment, 
-  Divider, 
-  Button, 
-  Header, 
-} from 'semantic-ui-react'
+import { Segment, Header } from 'semantic-ui-react'
 
 class BrowseAlbums extends React.Component {
   render() {

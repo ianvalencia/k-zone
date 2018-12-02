@@ -11,8 +11,6 @@ import BrowseArtists from './BrowseArtists'
 import Artist from './Artist';
 import CreateArtist from './CreateArtist'
 import BrowseAlbums from './BrowseAlbums'
-import Album from './Album';
-import CreateAlbum from './CreateAlbum'
 
 class App extends Component {
   POST = (url, data) => {

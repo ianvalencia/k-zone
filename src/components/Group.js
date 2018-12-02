@@ -11,7 +11,6 @@ import {
   Form, 
   Button,
   TextArea,
-  Label, 
 } from 'semantic-ui-react';
 
 class Group extends React.Component {
