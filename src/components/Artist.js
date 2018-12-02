@@ -73,6 +73,26 @@ class Artist extends React.Component {
   }
 
   render () {
+    if (this.state.artist.id === undefined) {
+      return (
+        <Container text>
+          <Segment fluid>
+            <Grid centered style={{ margin: '20px' }}>
+              <Grid.Row>
+                <Header as='h2' icon>
+                  <Icon name='settings' />
+                  Artist Not Found
+                </Header>
+              </Grid.Row>
+              <Grid.Row>
+                <Button positive as={Link} to='/browse/artists' content='Go back to browsing artists' icon='left chevron'/>
+              </Grid.Row>
+              
+            </Grid>
+          </Segment>
+        </Container>
+      )
+    }
     if (this.state.editFormOpen) {
       return (
         <Container text>

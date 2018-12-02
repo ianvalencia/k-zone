@@ -88,7 +88,26 @@ class Group extends React.Component {
   }
 
   render () {
-    console.log(JSON.stringify(this.state.members))
+    if (this.state.group.id === undefined) {
+      return (
+        <Container text>
+          <Segment fluid>
+            <Grid centered style={{ margin: '20px' }}>
+              <Grid.Row>
+                <Header as='h2' icon>
+                  <Icon name='settings' />
+                  Group Not Found
+                </Header>
+              </Grid.Row>
+              <Grid.Row>
+                <Button positive as={Link} to='/browse/groups' content='Go back to browsing groups' icon='left chevron'/>
+              </Grid.Row>
+              
+            </Grid>
+          </Segment>
+        </Container>
+      )
+    }
     if (this.state.editFormOpen) {
       return (
         <Container text>
