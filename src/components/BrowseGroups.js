@@ -8,6 +8,17 @@ class BrowseGroup extends React.Component {
     groupTypeOptions: this.props.data.groupTypeOptions
   }
 
+  fetchData() {
+    let url = 'http://localhost:3001/groups'
+    fetch(url)
+      .then(resp => resp.json())
+      .then(data => this.setState({groups: data}))
+  }
+
+  componentDidMount() {
+    this.fetchData()
+  }
+  
   render() {
     return (
       <Grid columns={2} >

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Container, Icon, Header, Responsive } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import BackgroundSlideshow from 'react-background-slideshow'
 
 import image1 from '../assets/1.png'
 import image2 from '../assets/2.png'
