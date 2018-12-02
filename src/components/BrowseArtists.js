@@ -9,18 +9,18 @@ import {
   Header, 
 } from 'semantic-ui-react'
 
-import GroupCard from './GroupCard'
+import ArtistCard from './ArtistCard'
 
-class BrowseGroups extends React.Component {
+class BrowseArtists extends React.Component {
   state = {
-    groups: [],
+    artists: [],
   }
 
   fetchData() {
-    let url = 'http://localhost:3001/groups'
+    let url = 'http://localhost:3001/artists'
     fetch(url)
       .then(resp => resp.json())
-      .then(data => this.setState({groups: data}))
+      .then(data => this.setState({artists: data}))
   }
 
   componentDidMount() {
@@ -32,17 +32,17 @@ class BrowseGroups extends React.Component {
   }
 
   checkIfEmpty = () => {
-    if (this.state.groups.length === 0) {
+    if (this.state.artists.length === 0) {
       return (
-        <Header as='h4' content='No groups found.' />
+        <Header as='h4' content='No artists found.' />
       )
     } else {
       return (
         <Grid columns={3}>
         { 
-          this.state.groups.map((grp) => (
+          this.state.artists.map((artist) => (
             <Grid.Column>
-              <GroupCard group={grp} />
+              <ArtistCard artist={artist} />
             </Grid.Column>
           ))
         }
@@ -56,16 +56,16 @@ class BrowseGroups extends React.Component {
       <Grid columns={2} >
         <Grid.Column width={3}>
           <Menu vertical fluid borderless>
-            <Menu.Item header content='Cannot find group?' />
+            <Menu.Item header content='Cannot find artist?' />
             <Divider style={{ marginTop: '0', marginBottom: '0'}}/>
             <Menu.Item style={{ padding: '0.5em'}}>
               <Button  
                 fluid 
                 icon='add circle'
-                content='Add New Group'
+                content='Add New Artist'
                 positive
                 as={Link}
-                to='/create/group'
+                to='/create/artist'
               />
             </Menu.Item>
           </Menu>
@@ -82,4 +82,4 @@ class BrowseGroups extends React.Component {
   }
 }
 
-export default BrowseGroups
+export default BrowseArtists

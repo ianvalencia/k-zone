@@ -4,11 +4,15 @@ import { Route } from 'react-router-dom'
 
 import ResponsiveNavbar from './ResponsiveNavbar'
 import LandingPage from './LandingPage'
-import CreateGroup from './CreateGroup'
-import BrowseGroup from './BrowseGroups'
+import BrowseGroups from './BrowseGroups'
 import Group from './Group'
-import ArtistsContainer from './ArtistsContainer'
-import AlbumsContainer from './AlbumsContainer'
+import CreateGroup from './CreateGroup'
+import BrowseArtists from './BrowseArtists'
+import Artist from './Artist';
+import CreateArtist from './CreateArtist'
+import BrowseAlbums from './BrowseAlbums'
+import Album from './Album';
+import CreateAlbum from './CreateAlbum'
 
 class App extends Component {
   POST = (url, data) => {
@@ -54,16 +58,31 @@ class App extends Component {
     let url = 'http://localhost:3001/groups/'+groupId
     this.DELETE(url)
   }
+
+  createArtist = (artist) => {
+    let url = 'http://localhost:3001/artists/'
+    this.POST(url, artist)
+  } 
+
+  updateArtist = (artist) => {
+    let url = 'http://localhost:3001/artists/'+artist.id
+    this.PUT(url, artist)
+  }
+
+  deleteArtist = (artistId) => {
+    let url = 'http://localhost:3001/artists/'+artistId
+    this.DELETE(url)
+  }
   
   render() {
     return (
       <div>
         <ResponsiveNavbar />
-        <Container style={{ marginTop: '2em'}}>
+        <Container style={{ marginTop: '2em', marginBottom: '2em'}}>
           <Route exact path='/' component={LandingPage} />
-          <Route path='/browse/groups' component={BrowseGroup} />
-          <Route path='/artists' component={ArtistsContainer} />
-          <Route path='/albums' component={AlbumsContainer} />
+          <Route path='/browse/groups' component={BrowseGroups} />
+          <Route exact path='/browse/artists' component={BrowseArtists} />
+          <Route path='/browse/albums' component={BrowseAlbums} />
           <Route
             path='/groups/:id'
             render={({ match }) => {
@@ -78,6 +97,20 @@ class App extends Component {
             }}
           />
           <Route path='/create/group' render={() => <CreateGroup onFormSubmit={this.createGroup} />} />
+          <Route
+            path='/artists/:id'
+            render={({ match }) => {
+              console.log(match.params.id)
+              return (
+                <Artist
+                  artistId={match.params.id}
+                  onFormSubmit={this.updateArtist}
+                  onDeleteClick={this.deleteArtist} 
+                />
+              )
+            }}
+          />
+          <Route path='/create/artist' render={() => <CreateArtist onFormSubmit={this.createArtist} />} />
         </Container>
       </div>
     )

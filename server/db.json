@@ -9,7 +9,6 @@
       "fandomName": "NCTZen",
       "fandomColor": "-",
       "status": "Active",
-      "members": [],
       "imgURL": "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/63/cc/b4/63ccb404-eb7a-a3f0-4dc9-152540bc161f/NCT_127_Cover.jpg/268x0w.jpg",
       "description": "NCT 127 (엔씨티 127) is the 2nd sub-unit of the boy group NCT. The sub-unit currently consists of 10 'members': Taeil, Johnny, Taeyong, Doyoung, Yuta, Jaehyun, Win Win, Jungwoo, Mark, Haechan. NCT 127 debuted on July 7th, 2016 under SM Entertainment."
     },
@@ -22,7 +21,6 @@
       "fandomName": "Stay",
       "fandomColor": "-",
       "status": "Active",
-      "members": [],
       "imgURL": "https://lastfm-img2.akamaized.net/i/u/770x0/dd9393d96f6b5b33cdd6e90f35b680fd.jpg",
       "description": "Stray Kids (스트레이 키즈) is a 9-member South Korean boy group under JYP Entertainment. The group consists of Bang Chan, Woojin, Lee Know, Changbin, Hyunjin, Han, Felix, Seungmin, and I.N. Stray Kids was created through the survival program with the same name, Stray Kids. Stray Kids debuted on March 25, 2018."
     },
@@ -35,7 +33,6 @@
       "fandomName": "Orbit",
       "fandomColor": "Holo",
       "status": "Active",
-      "members": [],
       "imgURL": "https://lastfm-img2.akamaized.net/i/u/ar0/7e9fbb03749066e1d58b6e9261fdbbbc.jpg",
       "description": "LOONA (LOOΠΔ – 이달의 소녀) contains of 12 'members': Haseul, Vivi, Yves, JinSoul, Kim Lip, Chuu, Heejin, Hyunjin, Go Won, Choerry, Olivia Hye and Yeojin. The band is under Blockberry Creative. They debuted on August 20, 2018 with their title track “Hi High”."
     },
@@ -48,7 +45,6 @@
       "fandomName": "Carat",
       "fandomColor": "Rose Quartz and Serenity",
       "status": "",
-      "members": [],
       "imgURL": "https://i.scdn.co/image/7b90f0bfdce832e113edba285d7aad9c283eb3d7",
       "description": "WAAAAAAAAAAAAAA"
     },
@@ -61,7 +57,6 @@
       "fandomName": "",
       "fandomColor": "",
       "status": "",
-      "members": [],
       "imgURL": "https://lastfm-img2.akamaized.net/i/u/ar0/6cb5367bf92f061d3bfac9277161e3c2.jpg",
       "description": "OG Nation\"s girl group"
     },
@@ -73,7 +68,6 @@
       "fandomName": "",
       "fandomColor": "",
       "status": "Disbanded",
-      "members": [],
       "imgURL": "https://0.soompi.io/wp-content/uploads/2017/07/22234559/the-boyz-2.jpg?s=900x600&e=t",
       "description": "visual kings",
       "id": 8
@@ -83,49 +77,86 @@
     {
       "id": 1,
       "stageName": "Hyunjin",
-      "birthName": "Im Jaebum",
+      "birthName": "Hwang Hyunjin",
       "nationality": "Korean",
+      "gender": "Male",
       "birthday": "",
-      "soloDebutDate": ""
+      "groupId": 2,
+      "imgURL": "https://66.media.tumblr.com/37b02b0fea4e8a3168e8e00d2c9f7631/tumblr_inline_ozl6248sJX1uprypi_540.gif"
     },
     {
       "id": 2,
       "stageName": "Woojin",
       "birthName": "Im Jaebum",
       "nationality": "Korean",
+      "gender": "",
       "birthday": "",
-      "soloDebutDate": ""
+      "groupId": 2,
+      "imgURL": "https://media1.tenor.com/images/ace5f2fdd8d31c89e0c277185c5ef4a7/tenor.gif?itemid=12066202"
     },
     {
       "id": 3,
       "stageName": "Chan",
       "birthName": "Im Jaebum",
       "nationality": "Korean",
+      "gender": "",
       "birthday": "",
-      "soloDebutDate": ""
+      "groupId": 2,
+      "imgURL": "https://66.media.tumblr.com/65d667950914bcd0d369c0147405e22b/tumblr_p4xm6yt4Lp1w1u9myo1_500.gif"
     },
     {
       "id": 4,
       "stageName": "Han",
       "birthName": "Im Jaebum",
       "nationality": "Korean",
+      "gender": "",
       "birthday": "",
-      "soloDebutDate": ""
-    },{
+      "groupId": 2,
+      "imgURL": "https://66.media.tumblr.com/75e5e35db7f98c5dce95de6e31c4a49e/tumblr_inline_p3uaabdIoP1stnhur_500.gif"
+    },
+    {
       "id": 5,
       "stageName": "Felix",
       "birthName": "Im Jaebum",
       "nationality": "Australian",
+      "gender": "",
       "birthday": "",
-      "soloDebutDate": ""
+      "groupId": 2,
+      "imgURL": "https://66.media.tumblr.com/e1c932ec2735439ace7261395f7c61c7/tumblr_pfcxbmi6yL1xo1fixo1_500.gif"
     },
     {
       "id": 6,
       "stageName": "I.N.",
       "birthName": "Im Jaebum",
       "nationality": "Korean",
+      "gender": "",
       "birthday": "",
-      "soloDebutDate": ""
+      "groupId": 2,
+      "imgURL": "https://pa1.narvii.com/6694/de1e3094a68caf86d197e0663ae29db9be108102_hq.gif"
+    },
+    {
+      "stageName": "Mingyu",
+      "birthName": "Kim Mingyu",
+      "birthday": "",
+      "gender": "Male",
+      "nationality": "Korean",
+      "fandomColor": "",
+      "group": "",
+      "imgURL": "https://i.pinimg.com/originals/57/18/65/57186539846981fcc7645600595e99bc.gif",
+      "groupId": 4,
+      "id": 7
+    },
+    {
+      "stageName": "Kim Lip",
+      "birthName": "Kim Jungeun",
+      "birthday": "",
+      "gender": "Female",
+      "nationality": "Korean",
+      "fandomColor": "",
+      "group": "",
+      "imgURL": "https://66.media.tumblr.com/5efc552c2a9106b9374c65cf81007868/tumblr_oyvfudQ2cl1qh3sm2o1_500.gif",
+      "groupId": 3,
+      "id": 8
     }
   ]
 }

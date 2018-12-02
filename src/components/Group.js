@@ -9,24 +9,33 @@ import {
   Container, 
   Grid, Icon, 
   Form, 
-  Button, 
+  Button,
+  TextArea,
+  Label, 
 } from 'semantic-ui-react';
 
 class Group extends React.Component {
   state = {
     editFormOpen: false,
     group: {},
+    members: [],
   } 
 
   fetchData() {
     let url = 'http://localhost:3001/groups/'+this.props.grpId
     fetch(url)
       .then(resp => resp.json())
-      .then(data => this.setState({group: data}))
+      .then(data => this.setState({ group: data }))
+
+    url = 'http://localhost:3001/artists?groupId='+this.props.grpId
+    fetch(url)
+      .then(resp => resp.json())
+      .then(data => this.setState({members: data}))
   }
 
   componentDidMount() {
     this.fetchData()
+    
   }
 
   handleFormOpen = () => {
@@ -52,7 +61,35 @@ class Group extends React.Component {
     this.handleFormClose()
   };
 
+  checkIfMembersEmpty = () => {
+    if (this.state.members.length === 0) {
+      return (
+        <Header textAlign='center'>
+          <Header.Subheader content='No registed members.' />
+        </Header>
+      )
+    } else {
+      return (
+        <Grid columns={4}>
+        { 
+          this.state.members.map((mem) => (
+            <Grid.Column>
+              <Card 
+                image={mem.imgURL}
+                header={mem.stageName}
+                as={Link}
+                to={`/artists/${mem.id}`} 
+              />
+            </Grid.Column>
+          ))
+        }
+        </Grid>
+      )
+    } 
+  }
+
   render () {
+    console.log(JSON.stringify(this.state.members))
     if (this.state.editFormOpen) {
       return (
         <Container text>
@@ -123,13 +160,17 @@ class Group extends React.Component {
                   label='Image URL'
                   onChange={this.handleChange} 
               />
-              <Form.Input
+              <Form.Field>
+              <label>Description</label>
+              <TextArea
                   placeholder='Description'
                   name='description'
                   value={this.state.group.description}
                   label='Description'
-                  onChange={this.handleChange} 
+                  onChange={this.handleChange}
+                  autoHeight
               />
+              </Form.Field>
               <Grid centered style={{ marginTop: '15px', marginBottom: '10px'}}>
                 <Button.Group>
                   <Button content='Save' onClick={this.handleSubmit} type='button' positive />
@@ -160,11 +201,12 @@ class Group extends React.Component {
             </Container>
             <Header as='h1' textAlign='center'>{`${this.state.group.groupName}`}</Header>
             <Divider />
-            <Header as='h3' textAlign='center' style={{marginTop: '0px'}}>Description</Header>
-            <p style={{textAlign: 'center'}}>{this.state.group.description}</p>
-            <Divider />
             <Grid columns={2} divided>
               <Grid.Row>
+                <Grid.Column textAlign='center' verticalAlign='middle'>
+                  <Header as='h3' textAlign='center' style={{marginTop: '0px'}}>Description</Header>
+                  <p style={{textAlign: 'center'}}>{this.state.group.description}</p>
+                </Grid.Column>
                 <Grid.Column textAlign='center'>
                   <Header as='h3'>Group Details</Header>
                   <Segment fluid secondary textAlign='left'>
@@ -220,19 +262,18 @@ class Group extends React.Component {
                     </Grid>
                   </Segment>
                 </Grid.Column>
-                <Grid.Column textAlign='center'>
-                  <Header as='h3'>Members</Header>
-                  <Grid columns={2} >
-                    <Grid.Column>
-                    <Card
-                      image={this.state.group.imgURL}
-                      header={this.state.group.groupName}
-                    />
-                    </Grid.Column>
-                  </Grid>
-                </Grid.Column>
               </Grid.Row>
-            </Grid>        
+            </Grid> 
+            <Divider />
+            <Header as='h3' textAlign='center' style={{marginTop: '0px'}}>Members</Header>
+            {
+              this.checkIfMembersEmpty()
+            }
+            <Divider />
+            <Header as='h3' textAlign='center' style={{marginTop: '0px'}}>Discography</Header>
+            <Header textAlign='center'>
+              <Header.Subheader content='Feature coming soon...' />
+            </Header>         
           </Segment>
         </Container>
       )

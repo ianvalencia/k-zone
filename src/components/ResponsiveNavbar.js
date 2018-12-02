@@ -24,8 +24,8 @@ class DesktopNavbar extends Component {
             <Dropdown item text='Browse'>
               <Dropdown.Menu>
                 <Dropdown.Item text='Groups' as={Link} to='/browse/groups' />
-                <Dropdown.Item text='Artists' as={Link} to='/artists' />
-                <Dropdown.Item text='Albums' as={Link} to='/albums' />
+                <Dropdown.Item text='Artists' as={Link} to='/browse/artists' />
+                <Dropdown.Item text='Albums' as={Link} to='/browse/albums' />
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Menu>   
