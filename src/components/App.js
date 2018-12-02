@@ -7,6 +7,7 @@ import BrowseGroup from './BrowseGroups';
 import Group from './Group'
 import ArtistsContainer from './ArtistsContainer';
 import AlbumsContainer from './AlbumsContainer';
+import CreateGroup from './CreateGroup';
 class App extends Component {
   state = {
     groups: [],
@@ -17,33 +18,38 @@ class App extends Component {
     ]
   }
   
-  fetchData() {
-    let url = 'http://localhost:3001/groups'
-    fetch(url)
-      .then(resp => resp.json())
-      .then(data => this.setState({groups: data}))
-  }
+  // fetchData() {
+  //   let url = 'http://localhost:3001/groups'
+  //   fetch(url)
+  //     .then(resp => resp.json())
+  //     .then(data => this.setState({groups: data}))
+  // }
 
-  componentDidMount() {
-    this.fetchData()
-  }
+  // componentDidMount() {
+  //   this.fetchData()
+  // }
 
   createGroup = (grp) => {
-    this.setState({
-      timers: this.state.groups.concat(grp),
-    });
+    let url = 'http://localhost:3001/groups/'
+    fetch(url, {
+      method: 'post',
+      body: JSON.stringify(grp),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
   } 
 
   updateGroup = (attrs) => {
-    this.setState({
-      groups: this.state.groups.map((group) => {
-        if (group.id === attrs.id) {
-          return Object.assign({}, attrs);
-        } else {
-          return group;
-        }
-      }),
-    });
+    // this.setState({
+    //   groups: this.state.groups.map((group) => {
+    //     if (group.id === attrs.id) {
+    //       return Object.assign({}, attrs);
+    //     } else {
+    //       return group;
+    //     }
+    //   }),
+    // });
 
     let url = 'http://localhost:3001/groups/'+attrs.id
     fetch(url, {
@@ -57,14 +63,13 @@ class App extends Component {
   }
 
   deleteGroup = (groupId) => {
-    this.setState({
-      groups: this.state.groups.filter(group => group.id !== groupId),
-    });
+    // this.setState({
+    //   groups: this.state.groups.filter(group => group.id !== groupId),
+    // });
 
     let url = 'http://localhost:3001/groups/'+groupId
     fetch(url, {
       method: 'delete',
-      //body: JSON.stringify(groupId),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -93,6 +98,7 @@ class App extends Component {
               );
             }}
           />
+          <Route path='/create/group' render={() => <CreateGroup onFormSubmit={this.createGroup} />} />
         </Container>
       </div>
     );

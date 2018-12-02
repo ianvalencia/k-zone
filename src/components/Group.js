@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment, Header, Image, Divider, Card, Container, Grid, Icon, Form, Button, Label } from 'semantic-ui-react';
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class Group extends React.Component {
   state = {
@@ -40,13 +40,12 @@ class Group extends React.Component {
   }
   
   handleDelete = (e) => {
-    this.props.onDeleteClick(this.state.id)
-    this.handleRedirect()
+    this.props.onDeleteClick(this.state.group.id)
   }
 
-  handleRedirect = () => (
-    <Redirect to='/browse/groups'/>
-  )
+  handleRedirect = () => {
+      this.props.history.push('/browse/groups')
+    }
     
 
 
@@ -167,7 +166,7 @@ class Group extends React.Component {
                 <Icon name='edit' />
                 Edit
               </Button>
-              <Button negative onClick={this.handleDelete}>
+              <Button negative onClick={this.handleDelete} as={Link} to='/browse/groups'>
                 <Icon name='delete' />
                 Delete
               </Button>
