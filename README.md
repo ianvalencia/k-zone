@@ -13,7 +13,7 @@ Then, start the JSON Server on port 3001:
 npx json-server --watch server/db.json --port 3001
 ```
 
-Open another Command Prompt, then run the client:
+Open another Command Prompt in the same directory, then run the client:
 ```
 npm start
 ```
