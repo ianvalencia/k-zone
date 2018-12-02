@@ -66,32 +66,6 @@
       "description": "OG Nation\"s girl group"
     },
     {
-      "groupName": "Stray Kids",
-      "groupType": "Boy Group",
-      "debutDate": "March 25, 2018",
-      "company": "",
-      "fandomName": "",
-      "fandomColor": "",
-      "status": "",
-      "members": [],
-      "imgURL": "https://lastfm-img2.akamaized.net/i/u/770x0/dd9393d96f6b5b33cdd6e90f35b680fd.jpg",
-      "description": "Stray Kids (스트레이 키즈) is a 9-member South Korean boy group under JYP Entertainment. The group consists of Bang Chan, Woojin, Lee Know, Changbin, Hyunjin, Han, Felix, Seungmin, and I.N. Stray Kids was created through the survival program with the same name, Stray Kids. Stray Kids debuted on March 25, 2018.",
-      "id": 6
-    },
-    {
-      "groupName": "NCT 127",
-      "groupType": "Boy Group",
-      "debutDate": "July 27, 2016",
-      "company": "SM Entertainment",
-      "fandomName": "NCTZen",
-      "fandomColor": "-",
-      "status": "Active",
-      "members": [],
-      "imgURL": "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/63/cc/b4/63ccb404-eb7a-a3f0-4dc9-152540bc161f/NCT_127_Cover.jpg/268x0w.jpg",
-      "description": "NCT 127 (엔씨티 127) is the 2nd sub-unit of the boy group NCT. The sub-unit currently consists of 10 'members': Taeil, Johnny, Taeyong, Doyoung, Yuta, Jaehyun, Win Win, Jungwoo, Mark, Haechan. NCT 127 debuted on July 7th, 2016 under SM Entertainment.",
-      "id": 7
-    },
-    {
       "groupName": "The Boyz",
       "groupType": "Boy Group",
       "debutDate": "",
@@ -103,6 +77,55 @@
       "imgURL": "https://0.soompi.io/wp-content/uploads/2017/07/22234559/the-boyz-2.jpg?s=900x600&e=t",
       "description": "visual kings",
       "id": 8
+    }
+  ],
+  "artists": [
+    {
+      "id": 1,
+      "stageName": "Hyunjin",
+      "birthName": "Im Jaebum",
+      "nationality": "Korean",
+      "birthday": "",
+      "soloDebutDate": ""
+    },
+    {
+      "id": 2,
+      "stageName": "Woojin",
+      "birthName": "Im Jaebum",
+      "nationality": "Korean",
+      "birthday": "",
+      "soloDebutDate": ""
+    },
+    {
+      "id": 3,
+      "stageName": "Chan",
+      "birthName": "Im Jaebum",
+      "nationality": "Korean",
+      "birthday": "",
+      "soloDebutDate": ""
+    },
+    {
+      "id": 4,
+      "stageName": "Han",
+      "birthName": "Im Jaebum",
+      "nationality": "Korean",
+      "birthday": "",
+      "soloDebutDate": ""
+    },{
+      "id": 5,
+      "stageName": "Felix",
+      "birthName": "Im Jaebum",
+      "nationality": "Australian",
+      "birthday": "",
+      "soloDebutDate": ""
+    },
+    {
+      "id": 6,
+      "stageName": "I.N.",
+      "birthName": "Im Jaebum",
+      "nationality": "Korean",
+      "birthday": "",
+      "soloDebutDate": ""
     }
   ]
 }

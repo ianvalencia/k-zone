@@ -1,11 +1,20 @@
-import React from 'react';
-import { Segment, Header, Image, Divider, Card, Container, Grid, Icon, Form, Button, Label } from 'semantic-ui-react';
-import { Link, Redirect } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { 
+  Segment, 
+  Header, 
+  Image, 
+  Divider, 
+  Card, 
+  Container, 
+  Grid, Icon, 
+  Form, 
+  Button, 
+} from 'semantic-ui-react';
 
 class Group extends React.Component {
   state = {
     editFormOpen: false,
-    loaded: false,
     group: {},
   } 
 
@@ -16,13 +25,8 @@ class Group extends React.Component {
       .then(data => this.setState({group: data}))
   }
 
-  componentWillMount() {
-    this.fetchData()
-    this.setState({loaded: true})
-  }
-
   componentDidMount() {
-
+    this.fetchData()
   }
 
   handleFormOpen = () => {
@@ -43,25 +47,16 @@ class Group extends React.Component {
     this.props.onDeleteClick(this.state.group.id)
   }
 
-  handleRedirect = () => {
-      this.props.history.push('/browse/groups')
-    }
-    
-
-
   handleSubmit = () => {
     this.props.onFormSubmit(this.state.group);
-
     this.handleFormClose()
   };
 
   render () {
-
     if (this.state.editFormOpen) {
       return (
         <Container text>
           <Segment fluid>
-            
             <Header as='h1' textAlign='left'>Edit Group</Header>
             <Divider />
             <Form>
@@ -74,7 +69,6 @@ class Group extends React.Component {
                   label='Group Name'
                   onChange={this.handleChange} 
                 />
-
                 <Form.Select
                   name='groupType'
                   value={this.state.group.groupType}
@@ -82,7 +76,6 @@ class Group extends React.Component {
                   options={[{text: 'Boy Group', value: 'Boy Group'}, {text: 'Girl Group', value: 'Girl Group'}]}
                   onChange={this.handleChange} 
                 />
-
                 <Form.Input 
                   placeholder='Company' 
                   name='company' 
@@ -90,11 +83,8 @@ class Group extends React.Component {
                   label='Company'
                   onChange={this.handleChange} 
                 />
-                
               </Form.Group>
-              
               <Form.Group>
-                
                 <Form.Input
                   placeholder='Month Day, Year'
                   name='debutDate'
@@ -102,7 +92,6 @@ class Group extends React.Component {
                   label='Debut Date'
                   onChange={this.handleChange} 
                 />
-
                 <Form.Select
                   name='status'
                   value={this.state.group.status}
@@ -112,7 +101,6 @@ class Group extends React.Component {
                 />
               </Form.Group>
               <Form.Group equal>
-   
                 <Form.Input
                   placeholder='Fandom Name'
                   name='fandomName'
@@ -120,7 +108,6 @@ class Group extends React.Component {
                   label='Fandom Name'
                   onChange={this.handleChange} 
                 />
-
                 <Form.Input
                   placeholder='Fandom Color'
                   name='fandomColor'
@@ -128,7 +115,6 @@ class Group extends React.Component {
                   label='Fandom Color'
                   onChange={this.handleChange} 
                 />
-                
               </Form.Group>
               <Form.Input
                   placeholder='Image URL'
@@ -151,9 +137,7 @@ class Group extends React.Component {
                   <Button content='Cancel' onClick={this.handleFormClose} />
                 </Button.Group>
               </Grid>
-              
             </Form>
-            
           </Segment>
         </Container>
       )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Responsive, Segment, Menu, Container, Dropdown, List, Divider, Grid, Header } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Container } from 'semantic-ui-react'
 
 class AlbumsContainer extends Component {
   render() {
@@ -12,7 +11,6 @@ class AlbumsContainer extends Component {
       </div>
     )
   }  
-  
 }
 
 export default AlbumsContainer

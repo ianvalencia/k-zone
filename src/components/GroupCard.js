@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Icon, Image, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { Card, Icon, Image, Container } from 'semantic-ui-react'
 
 class GroupCard extends React.Component {
   shortenDescription = (desc) => {
@@ -24,7 +24,11 @@ class GroupCard extends React.Component {
           <Card.Meta>
             <span className='date'>{this.props.group.groupType}</span>
           </Card.Meta>
-          <Card.Description>{this.shortenDescription(this.props.group.description)}</Card.Description>
+          <Card.Description>
+          {
+            this.shortenDescription(this.props.group.description)
+          }
+          </Card.Description>
         </Card.Content>
         <Card.Content extra>
           <div>

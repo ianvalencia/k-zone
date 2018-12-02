@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Container, Icon, Header, Responsive } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
-
-import image1 from '../assets/1.png'
-import image2 from '../assets/2.png'
-import image3 from '../assets/3.png'
+import { Container, Header, Responsive } from 'semantic-ui-react'
 
 const LandingpageHeading = ({ mobile }) => (
   <Container text style={{ marginTop: mobile ? '15em' :'20em' }} textAlign='center'>
@@ -13,7 +8,6 @@ const LandingpageHeading = ({ mobile }) => (
       content='Welcome to K-Zone!'
       style={{
         fontSize: mobile ? '2.5em' : '4em',
-        //fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
       }}

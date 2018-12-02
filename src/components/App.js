@@ -1,90 +1,69 @@
-import React, { Component } from 'react';
-import { Segment, Container } from 'semantic-ui-react';
+import React, { Component } from 'react'
+import { Container } from 'semantic-ui-react'
+import { Route } from 'react-router-dom'
+
 import ResponsiveNavbar from './ResponsiveNavbar'
-import { Route, Redirect } from 'react-router-dom';
-import LandingPage from './LandingPage';
-import BrowseGroup from './BrowseGroups';
+import LandingPage from './LandingPage'
+import CreateGroup from './CreateGroup'
+import BrowseGroup from './BrowseGroups'
 import Group from './Group'
-import ArtistsContainer from './ArtistsContainer';
-import AlbumsContainer from './AlbumsContainer';
-import CreateGroup from './CreateGroup';
+import ArtistsContainer from './ArtistsContainer'
+import AlbumsContainer from './AlbumsContainer'
+
 class App extends Component {
-  state = {
-    groups: [],
-    groupTypeOptions: [
-      { key: 1, text: 'Boy Group', value:'Boy Group' },
-      { key: 2, text: 'Girl Group', value:'Girl Group' },
-      { key: 3, text: 'Coed', value: 'Coed' }
-    ]
-  }
-  
-  // fetchData() {
-  //   let url = 'http://localhost:3001/groups'
-  //   fetch(url)
-  //     .then(resp => resp.json())
-  //     .then(data => this.setState({groups: data}))
-  // }
-
-  // componentDidMount() {
-  //   this.fetchData()
-  // }
-
-  createGroup = (grp) => {
-    let url = 'http://localhost:3001/groups/'
+  POST = (url, data) => {
     fetch(url, {
       method: 'post',
-      body: JSON.stringify(grp),
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
       },
     })
   } 
 
-  updateGroup = (attrs) => {
-    // this.setState({
-    //   groups: this.state.groups.map((group) => {
-    //     if (group.id === attrs.id) {
-    //       return Object.assign({}, attrs);
-    //     } else {
-    //       return group;
-    //     }
-    //   }),
-    // });
-
-    let url = 'http://localhost:3001/groups/'+attrs.id
+  PUT = (url, data) => {
     fetch(url, {
       method: 'put',
-      body: JSON.stringify(attrs),
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
       },
     })
-
   }
 
-  deleteGroup = (groupId) => {
-    // this.setState({
-    //   groups: this.state.groups.filter(group => group.id !== groupId),
-    // });
-
-    let url = 'http://localhost:3001/groups/'+groupId
+  DELETE = (url) => {
     fetch(url, {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
       },
     })
-  };
+  }
+
+  createGroup = (grp) => {
+    let url = 'http://localhost:3001/groups/'
+    this.POST(url, grp)
+  } 
+
+  updateGroup = (grp) => {
+    let url = 'http://localhost:3001/groups/'+grp.id
+    this.PUT(url, grp)
+  }
+
+  deleteGroup = (groupId) => {
+    let url = 'http://localhost:3001/groups/'+groupId
+    this.DELETE(url)
+  }
   
   render() {
     return (
       <div>
         <ResponsiveNavbar />
         <Container style={{ marginTop: '2em'}}>
-          <Route exact path='/' component={LandingPage}/>
-          <Route path='/browse/groups' render={() => <BrowseGroup data={this.state} triggerFetchData={this.fetchData}/>} />
-          <Route path='/artists' component={ArtistsContainer}/>
-          <Route path='/albums' component={AlbumsContainer}/>
+          <Route exact path='/' component={LandingPage} />
+          <Route path='/browse/groups' component={BrowseGroup} />
+          <Route path='/artists' component={ArtistsContainer} />
+          <Route path='/albums' component={AlbumsContainer} />
           <Route
             path='/groups/:id'
             render={({ match }) => {
@@ -95,14 +74,14 @@ class App extends Component {
                   onFormSubmit={this.updateGroup}
                   onDeleteClick={this.deleteGroup} 
                 />
-              );
+              )
             }}
           />
           <Route path='/create/group' render={() => <CreateGroup onFormSubmit={this.createGroup} />} />
         </Container>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,6 +1,15 @@
 import React from 'react'
-import { Segment, Header, Divider, Container, Grid, Form, Button, } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
+import { 
+  Segment, 
+  Header, 
+  Divider, 
+  Container, 
+  Grid, 
+  Form, 
+  Button, 
+} from 'semantic-ui-react';
+
 
 class CreateGroup extends React.Component {
   state = { 
@@ -47,7 +56,6 @@ class CreateGroup extends React.Component {
                 label='Group Name'
                 onChange={this.handleChange} 
               />
-
               <Form.Select
                 name='groupType'
                 value={this.state.group.groupType}
@@ -55,7 +63,6 @@ class CreateGroup extends React.Component {
                 options={[{text: 'Boy Group', value: 'Boy Group'}, {text: 'Girl Group', value: 'Girl Group'}]}
                 onChange={this.handleChange} 
               />
-
               <Form.Input 
                 placeholder='Company' 
                 name='company' 
@@ -63,11 +70,8 @@ class CreateGroup extends React.Component {
                 label='Company'
                 onChange={this.handleChange} 
               />
-              
             </Form.Group>
-            
             <Form.Group>
-              
               <Form.Input
                 placeholder='Month Day, Year'
                 name='debutDate'
@@ -75,7 +79,6 @@ class CreateGroup extends React.Component {
                 label='Debut Date'
                 onChange={this.handleChange} 
               />
-
               <Form.Select
                 name='status'
                 value={this.state.group.status}
@@ -85,7 +88,6 @@ class CreateGroup extends React.Component {
               />
             </Form.Group>
             <Form.Group equal>
-
               <Form.Input
                 placeholder='Fandom Name'
                 name='fandomName'
@@ -93,15 +95,13 @@ class CreateGroup extends React.Component {
                 label='Fandom Name'
                 onChange={this.handleChange} 
               />
-
               <Form.Input
                 placeholder='Fandom Color'
                 name='fandomColor'
                 value={this.state.group.fandomColor}
                 label='Fandom Color'
                 onChange={this.handleChange} 
-              />
-              
+              />             
             </Form.Group>
             <Form.Input
                 placeholder='Image URL'
@@ -123,10 +123,8 @@ class CreateGroup extends React.Component {
                 <Button.Or />
                 <Button content='Cancel' as={Link} to='/browse/groups'/>
               </Button.Group>
-            </Grid>
-            
+            </Grid> 
           </Form>
-          
         </Segment>
       </Container>
     )

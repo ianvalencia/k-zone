@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Responsive, Segment, Menu, Container, Dropdown } from 'semantic-ui-react'
+import { Menu, Container, Dropdown } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 class DesktopNavbar extends Component {
@@ -35,21 +35,11 @@ class DesktopNavbar extends Component {
   }
 }
 
-class MobileNavbar extends Component {
-  render() {
-    return (
-      <Responsive as={Segment} {...Responsive.onlyMobile}>
-        Mobile
-      </Responsive>
-    )
-  }
-}
 
-const ResponsiveNavbar = ({ }) => (
+const ResponsiveNavbar = () => (
   <div>
     <DesktopNavbar />
   </div>
-
 );
 
 export default ResponsiveNavbar;
