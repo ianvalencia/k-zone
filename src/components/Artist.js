@@ -19,12 +19,12 @@ class Artist extends React.Component {
   } 
 
   fetchData() {
-    let url = 'http://localhost:3001/artists/'+this.props.artistId
+    let url = 'http://kzone-165.herokuapp.com/artists/'+this.props.artistId
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({ artist: data }))
 
-    url = 'http://localhost:3001/groups'
+    url = 'http://kzone-165.herokuapp.com/groups'
     fetch(url)
       .then(resp => resp.json())
       .then(data => data.map((grp) => Object.assign({}, {text: grp.groupName, value: grp.id})))
@@ -60,6 +60,8 @@ class Artist extends React.Component {
   }
 
   extractGroup = () => {
+    console.log(this.state.artist.grpId)
+    console.log(this.state.groupOptions)
     var group = this.state.groupOptions.find(
       (a) => a.value === this.state.artist.groupId
     )

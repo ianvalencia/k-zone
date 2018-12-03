@@ -17,7 +17,7 @@ class BrowseGroups extends React.Component {
   }
 
   fetchData() {
-    let url = 'http://localhost:3001/groups'
+    let url = 'http://kzone-165.herokuapp.com/groups'
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({groups: data}))

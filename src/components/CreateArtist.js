@@ -17,7 +17,7 @@ class CreateArtist extends React.Component {
     groupOptions: []
   }
   fetchData() {
-    let url = 'http://localhost:3001/groups'
+    let url = 'http://kzone-165.herokuapp.com/groups'
     fetch(url)
       .then(resp => resp.json())
       .then(data => data.map((grp) => Object.assign({}, {text: grp.groupName, value: grp.id})))
@@ -31,8 +31,7 @@ class CreateArtist extends React.Component {
       birthday: '',
       gender: '',
       nationality: '',
-      fandomColor: '',
-      group: '',
+      groupId: '',
       imgURL: '',
     }})
 

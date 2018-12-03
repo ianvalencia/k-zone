@@ -43,32 +43,32 @@ class App extends Component {
   }
 
   createGroup = (grp) => {
-    let url = 'http://localhost:3001/groups/'
+    let url = 'http://kzone-165.herokuapp.com/groups/'
     this.POST(url, grp)
   } 
 
   updateGroup = (grp) => {
-    let url = 'http://localhost:3001/groups/'+grp.id
+    let url = 'http://kzone-165.herokuapp.com/groups/'+grp.id
     this.PUT(url, grp)
   }
 
   deleteGroup = (groupId) => {
-    let url = 'http://localhost:3001/groups/'+groupId
+    let url = 'http://kzone-165.herokuapp.com/groups/'+groupId
     this.DELETE(url)
   }
 
   createArtist = (artist) => {
-    let url = 'http://localhost:3001/artists/'
+    let url = 'http://kzone-165.herokuapp.com/artists/'
     this.POST(url, artist)
   } 
 
   updateArtist = (artist) => {
-    let url = 'http://localhost:3001/artists/'+artist.id
+    let url = 'http://kzone-165.herokuapp.com/artists/'+artist.id
     this.PUT(url, artist)
   }
 
   deleteArtist = (artistId) => {
-    let url = 'http://localhost:3001/artists/'+artistId
+    let url = 'http://kzone-165.herokuapp.com/artists/'+artistId
     this.DELETE(url)
   }
   

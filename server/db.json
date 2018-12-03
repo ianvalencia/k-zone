@@ -75,24 +75,24 @@
   ],
   "artists": [
     {
-      "id": 1,
-      "stageName": "Hyunjin",
       "birthName": "Hwang Hyunjin",
-      "nationality": "Korean",
-      "gender": "Male",
       "birthday": "",
+      "gender": "Male",
       "groupId": 2,
-      "imgURL": "https://66.media.tumblr.com/37b02b0fea4e8a3168e8e00d2c9f7631/tumblr_inline_ozl6248sJX1uprypi_540.gif"
+      "id": 1,
+      "imgURL": "https://66.media.tumblr.com/37b02b0fea4e8a3168e8e00d2c9f7631/tumblr_inline_ozl6248sJX1uprypi_540.gif",
+      "nationality": "Korean",
+      "stageName": "Hyunjinasdfasdg"
     },
     {
-      "id": 2,
-      "stageName": "Woojin",
       "birthName": "Im Jaebum",
-      "nationality": "Korean",
-      "gender": "",
       "birthday": "",
+      "gender": "Male",
       "groupId": 2,
-      "imgURL": "https://media1.tenor.com/images/ace5f2fdd8d31c89e0c277185c5ef4a7/tenor.gif?itemid=12066202"
+      "id": 2,
+      "imgURL": "https://media1.tenor.com/images/ace5f2fdd8d31c89e0c277185c5ef4a7/tenor.gif?itemid=12066202",
+      "nationality": "Korean",
+      "stageName": "Woojin"
     },
     {
       "id": 3,
