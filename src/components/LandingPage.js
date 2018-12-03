@@ -14,7 +14,7 @@ const LandingpageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Where ewan meets ebas ganyan'
+      content='Your one stop shop for everything KPOP'
       style={{
         fontSize: mobile ? '1em' : '1.7em',
         fontWeight: 'normal',
