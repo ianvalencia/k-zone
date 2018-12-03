@@ -21,12 +21,15 @@ class Group extends React.Component {
   } 
 
   fetchData() {
-    let url = 'http://localhost:3001/groups/'+this.props.grpId
+    let url = 'http://localhost:5000/groups/'+this.props.grpId
     fetch(url)
       .then(resp => resp.json())
-      .then(data => this.setState({ group: data }))
+      .then(data => {
+        console.log(data)
+        this.setState({ group: data })}
+      )
 
-    url = 'http://localhost:3001/artists?groupId='+this.props.grpId
+    url = 'http://localhost:5000/artists?groupId='+this.props.grpId
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({members: data}))
