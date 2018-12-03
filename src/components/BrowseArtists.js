@@ -17,7 +17,7 @@ class BrowseArtists extends React.Component {
   }
 
   fetchData() {
-    let url = 'http://localhost:5000/artists'
+    let url = 'http://kzone-165.herokuapp.com/artists'
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({artists: data}))

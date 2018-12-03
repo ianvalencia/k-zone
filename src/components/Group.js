@@ -21,7 +21,7 @@ class Group extends React.Component {
   } 
 
   fetchData() {
-    let url = 'http://localhost:5000/groups/'+this.props.grpId
+    let url = 'http://kzone-165.herokuapp.com/groups/'+this.props.grpId
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -29,7 +29,7 @@ class Group extends React.Component {
         this.setState({ group: data })}
       )
 
-    url = 'http://localhost:5000/artists?groupId='+this.props.grpId
+    url = 'http://kzone-165.herokuapp.com/artists?groupId='+this.props.grpId
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({members: data}))

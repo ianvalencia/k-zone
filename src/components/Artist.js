@@ -19,12 +19,12 @@ class Artist extends React.Component {
   } 
 
   fetchData() {
-    let url = 'http://localhost:5000/artists/'+this.props.artistId
+    let url = 'http://kzone-165.herokuapp.com/artists/'+this.props.artistId
     fetch(url)
       .then(resp => resp.json())
       .then(data => this.setState({ artist: data }))
 
-    url = 'http://localhost:5000/groups'
+    url = 'http://kzone-165.herokuapp.com/groups'
     fetch(url)
       .then(resp => resp.json())
       .then(data => data.map((grp) => Object.assign({}, {text: grp.groupName, value: grp.id})))
