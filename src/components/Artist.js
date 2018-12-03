@@ -175,7 +175,7 @@ class Artist extends React.Component {
                 <Icon name='edit' />
                 Edit
               </Button>
-              <Button negative onClick={this.handleDelete} as={Link} to='/browse/groups'>
+              <Button negative onClick={this.handleDelete} as={Link} to='/browse/artists'>
                 <Icon name='delete' />
                 Delete
               </Button>
